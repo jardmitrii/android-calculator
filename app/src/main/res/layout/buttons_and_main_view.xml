@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow>
+            <Button
+                android:id="@+id/button_clear"
+                style="@style/CalcButtonsStyle"
+                android:text="@string/str_clear" />
+
+            <Button
+                android:id="@+id/button_leftparenthesis"
+                style="@style/CalcButtonsStyle"
+                android:text="@string/str_leftparenthesis" />
+
+            <Button
+                android:id="@+id/button_rightparenthesis"
+                style="@style/CalcButtonsStyle"
+                android:text="@string/str_rightparenthesis" />
+
+            <Button
+                android:id="@+id/button_backspace"
+                style="@style/CalcButtonsStyle"
+                android:text="@string/str_backspace" />
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/button7"
+                style="@style/CalcButtonsStyle"
+                android:text="@string/str_seven" />
+
+            <Button
+                android:id="@+id/button8"
+                style="@style/CalcButtonsStyle"
+                android:text="@string/str_eight" />
+
+            <Button
+                android:id="@+id/button9"
+                style="@style/CalcButtonsStyle"
+                android:text="@string/str_nine" />
+
+            <Button
+                android:id="@+id/button_division"
+                style="@style/CalcButtonsStyle"
+                android:text="@string/str_division" />
+
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/button4"
+                style="@style/CalcButtonsStyle"
+                android:text="@string/str_four" />
+
+            <Button
+                android:id="@+id/button5"
+                style="@style/CalcButtonsStyle"
+                android:text="@string/str_five" />
+
+            <Button
+                android:id="@+id/button6"
+                style="@style/CalcButtonsStyle"
+                android:text="@string/str_six" />
+
+            <Button
+                android:id="@+id/button_multiply"
+                style="@style/CalcButtonsStyle"
+                android:text="@string/str_multiply" />
+
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/button1"
+                style="@style/CalcButtonsStyle"
+                android:text="@string/str_one" />
+
+            <Button
+                android:id="@+id/button2"
+                style="@style/CalcButtonsStyle"
+                android:text="@string/str_two" />
+
+            <Button
+                android:id="@+id/button3"
+                style="@style/CalcButtonsStyle"
+                android:text="@string/str_three" />
+
+            <Button
+                android:id="@+id/button_minus"
+                style="@style/CalcButtonsStyle"
+                android:text="@string/str_minus" />
+
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/button0"
+                style="@style/CalcButtonsStyle"
+                android:text="@string/str_zero" />
+
+            <Button
+                android:id="@+id/button_point"
+                style="@style/CalcButtonsStyle"
+                android:text="@string/str_point" />
+
+            <Button
+                android:id="@+id/button_equal"
+                style="@style/CalcButtonsStyle"
+                android:text="@string/str_equal" />
+
+            <Button
+                android:id="@+id/button_plus"
+                style="@style/CalcButtonsStyle"
+                android:text="@string/str_plus" />
+
+        </TableRow>
+</TableLayout>

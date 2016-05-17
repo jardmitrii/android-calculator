@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="str_zero">0</string>
+    <string name="str_one">1</string>
+    <string name="str_two">2</string>
+    <string name="str_three">3</string>
+    <string name="str_four">4</string>
+    <string name="str_five">5</string>
+    <string name="str_six">6</string>
+    <string name="str_seven">7</string>
+    <string name="str_eight">8</string>
+    <string name="str_nine">9</string>
+    <string name="str_leftparenthesis">(</string>
+    <string name="str_rightparenthesis">)</string>
+    <string name="str_point">.</string>
+    <string name="str_minus">-</string>
+    <string name="str_plus">+</string>
+    <string name="str_division">/</string>
+    <string name="str_multiply">*</string>
+    <string name="str_clear">C</string>
+    <string name="str_backspace">&lt;-</string>
+    <string name="str_equal">=</string>
+    <string name="str_regexp_parentheses">\\([0-9\\.\\*\\/\\+-]*\\)</string>
+    <string name="str_regexp_multi_div">[0-9\\.]*[\\*\\/][0-9\\.]*</string>
+    <string name="str_regexp_add_sub">[0-9\\.]*[\\+\\-][0-9\\.]*</string>
+</resources>

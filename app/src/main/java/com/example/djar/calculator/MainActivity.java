@@ -11,8 +11,8 @@ import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String MAIN_TEXT = "main_text";
-    private static final String HISTORY_TEXT = "history_text";
+    private final String MAIN_TEXT = "main_text";
+    private final String HISTORY_TEXT = "history_text";
     private String main_text = "";
     private String history_text = "";
     private String error_text = "";
@@ -68,6 +68,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textView.setText(String.valueOf(str_to_display));
     }
 
+    private void displayHistory(String str_to_display) {
+        TextView historyView = (TextView) findViewById(R.id.textViewHistory);
+        historyView.setText(String.valueOf(str_to_display));
+    }
+
     private void addToMainText(String str) {
         main_text += str;
     }
@@ -86,7 +91,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void equal() {
         if (!main_text.isEmpty()) {
-            main_text = parse_string(main_text);
+            String str_equal = parse_string(main_text);
+            history_text += "\n" + main_text + "\t = " + str_equal;
+            main_text = str_equal;
         }
     }
 
@@ -111,7 +118,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String[] regex_arr = {str_regexp_parentheses, str_regexp_multi_div, str_regexp_add_sub};
 
         for (String str_regex: regex_arr) {
-            //String str_regex = getString(R.string.str_regexp_parentheses);
             Pattern pattern = Pattern.compile(str_regex);
             Matcher matcher = pattern.matcher(str_to_parse);
 
@@ -234,6 +240,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button_equal:
                 equal();
+                displayHistory(history_text);
                 break;
         }
         displayText(main_text);

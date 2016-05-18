@@ -14,10 +14,11 @@
         android:id="@+id/textViewHistory"
         android:freezesText="true"
         android:textSize="@dimen/calc_buttons_text_size"
-        android:text="history"
         android:layout_height="match_parent"
         android:layout_width="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:gravity="bottom"
+        android:ellipsize="marquee" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -32,12 +33,9 @@
             android:id="@+id/textView"
             android:freezesText="true"
             android:textSize="@dimen/calc_buttons_text_size"
-            android:maxLines="2"
-            android:text="text" />
+            android:maxLines="2" />
 
-        <include layout="@layout/buttons_and_main_view"
-            android:layout_height="0dp"
-            android:layout_weight="0"/>
+        <include layout="@layout/buttons_and_main_view"/>
 
     </LinearLayout>
 </LinearLayout>

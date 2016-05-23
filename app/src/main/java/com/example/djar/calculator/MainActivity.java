@@ -3,7 +3,7 @@ package com.example.djar.calculator;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
+
 import android.widget.TextView;
 
 import java.util.regex.Matcher;
@@ -19,26 +19,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void setOnClicListenerToButtons() {
         // find buttons by id and set them onClickListener
-        ((Button) findViewById(R.id.button0)).setOnClickListener(this);
-        ((Button) findViewById(R.id.button1)).setOnClickListener(this);
-        ((Button) findViewById(R.id.button2)).setOnClickListener(this);
-        ((Button) findViewById(R.id.button3)).setOnClickListener(this);
-        ((Button) findViewById(R.id.button4)).setOnClickListener(this);
-        ((Button) findViewById(R.id.button5)).setOnClickListener(this);
-        ((Button) findViewById(R.id.button6)).setOnClickListener(this);
-        ((Button) findViewById(R.id.button7)).setOnClickListener(this);
-        ((Button) findViewById(R.id.button8)).setOnClickListener(this);
-        ((Button) findViewById(R.id.button9)).setOnClickListener(this);
-        ((Button) findViewById(R.id.button_leftparenthesis)).setOnClickListener(this);
-        ((Button) findViewById(R.id.button_rightparenthesis)).setOnClickListener(this);
-        ((Button) findViewById(R.id.button_minus)).setOnClickListener(this);
-        ((Button) findViewById(R.id.button_plus)).setOnClickListener(this);
-        ((Button) findViewById(R.id.button_division)).setOnClickListener(this);
-        ((Button) findViewById(R.id.button_multiply)).setOnClickListener(this);
-        ((Button) findViewById(R.id.button_point)).setOnClickListener(this);
-        ((Button) findViewById(R.id.button_backspace)).setOnClickListener(this);
-        ((Button) findViewById(R.id.button_clear)).setOnClickListener(this);
-        ((Button) findViewById(R.id.button_equal)).setOnClickListener(this);
+        findViewById(R.id.button0).setOnClickListener(this);
+        findViewById(R.id.button1).setOnClickListener(this);
+        findViewById(R.id.button2).setOnClickListener(this);
+        findViewById(R.id.button3).setOnClickListener(this);
+        findViewById(R.id.button4).setOnClickListener(this);
+        findViewById(R.id.button5).setOnClickListener(this);
+        findViewById(R.id.button6).setOnClickListener(this);
+        findViewById(R.id.button7).setOnClickListener(this);
+        findViewById(R.id.button8).setOnClickListener(this);
+        findViewById(R.id.button9).setOnClickListener(this);
+        findViewById(R.id.button_leftparenthesis).setOnClickListener(this);
+        findViewById(R.id.button_rightparenthesis).setOnClickListener(this);
+        findViewById(R.id.button_minus).setOnClickListener(this);
+        findViewById(R.id.button_plus).setOnClickListener(this);
+        findViewById(R.id.button_division).setOnClickListener(this);
+        findViewById(R.id.button_multiply).setOnClickListener(this);
+        findViewById(R.id.button_point).setOnClickListener(this);
+        findViewById(R.id.button_backspace).setOnClickListener(this);
+        findViewById(R.id.button_clear).setOnClickListener(this);
+        findViewById(R.id.button_equal).setOnClickListener(this);
     }
 
     @Override
@@ -127,14 +127,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (str_regex.equals(str_regexp_parentheses)) {
                     str_replacement = parse_string(substr.substring(1, substr.length() - 1));
                 } else if (str_regex.equals(str_regexp_multi_div)) {
-                    if (substr.indexOf(str_multiply) > -1) {
+                    if (substr.contains(str_multiply)) {
                         String[] parts = substr.split("\\" + str_multiply);
                         if (parts.length > 1) {
                             Double result = Double.parseDouble(parts[0]) * Double.parseDouble(parts[1]);
                             str_replacement = result.toString();
                         }
                     }
-                    if (substr.indexOf(str_division) > -1) {
+                    if (substr.contains(str_division)) {
                         String[] parts = substr.split("\\" + str_division);
                         if (parts.length > 1) {
                             if (Double.parseDouble(parts[1]) != 0) {
@@ -146,14 +146,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         }
                     }
                 } else if (str_regex.equals(str_regexp_add_sub)) {
-                    if (substr.indexOf(str_plus) > -1) {
+                    if (substr.contains(str_plus)) {
                         String[] parts = substr.split("\\" + str_plus);
                         if (parts.length > 1) {
                             Double result = Double.parseDouble(parts[0]) + Double.parseDouble(parts[1]);
                             str_replacement = result.toString();
                         }
                     }
-                    if (substr.indexOf(str_minus) > -1) {
+                    if (substr.contains(str_minus)) {
                         String[] parts = substr.split("\\" + str_minus);
                         if (parts.length > 1) {
                             Double result = Double.parseDouble(parts[0]) - Double.parseDouble(parts[1]);
@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
-        if (str_to_parse.indexOf(str_leftparenthesis) > -1 || str_to_parse.indexOf(str_rightparenthesis) > -1) {
+        if (str_to_parse.contains(str_leftparenthesis) || str_to_parse.contains(str_rightparenthesis)) {
             show_error_message("parentheses!");
             return "";
         }
